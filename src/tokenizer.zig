@@ -75,7 +75,7 @@ const Tokenizer = struct {
     fn str(self: *Tokenizer) Token {
         self.start();
         const delim = self.src[self.i];
-        var esc = true;
+        var esc = false;
         while (self.i < self.src.len) : (self.i += 1) {
             const c = self.src[self.i];
             if (esc) {
